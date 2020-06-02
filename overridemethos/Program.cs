@@ -7,6 +7,31 @@ using System.Threading.Tasks;
 
 namespace overridemethos
 {
+    class A
+    {
+        public A()
+        {
+            Console.WriteLine("A 생성자");
+        }
+
+        ~A()
+        {
+            Console.WriteLine("A 소멸자");
+        }
+    }
+
+    class B : A
+    {
+        public B()
+        {
+            Console.WriteLine("B 생성자");
+        }
+
+        ~B()
+        {
+            Console.WriteLine("B 소멸자");
+        }
+    }
     class Program
     {
         static int power(int input)
@@ -43,6 +68,8 @@ namespace overridemethos
             Console.WriteLine(power(3,4));
             Console.WriteLine(SumAll(10));
             Console.WriteLine(SumAll(2, 7));
+
+            new B();
         }
     }
 }
